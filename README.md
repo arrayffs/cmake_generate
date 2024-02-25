@@ -10,6 +10,8 @@ i'm assuming you are smart enough to install those yourselves :3
 ___
 ### usage
 
+please note that the directory you are supplying has to already exist, this will not create the directory itself.
+
 ``` bash
 # this will generate the files inside the CWD
 $ cmake_generate "."
