@@ -1,7 +1,3 @@
 #!/bin/bash
 
 rm ../build/ -rf
-mkdir ../build/
-
-rm ../testfolder -rf
-mkdir ../testfolder/

@@ -56,6 +56,31 @@ bool genMain(std::string path)
   return true;
 }
 
+bool genScripts(std::string path)
+{
+  std::string sClean = path + "/clean";
+  std::string sBuild = path + "/compile";
+  
+  std::ofstream clean(sClean);
+  clean << "#!/bin/bash\n";
+  clean << "rm build/\n";
+
+
+  std::ofstream build(sBuild);
+  build << "#!/bin/bash\n";
+  build << "mkdir build/\n";
+  build << "cd build/\n";
+  build << "cmake .. && make\n";
+  build.close();
+  clean.close();
+
+  std::string sSystemClean = "chmod +x " + sClean;
+  std::string sSystemBuild = "chmod +x " + sBuild;
+  system(sSystemClean.c_str());
+  system(sSystemBuild.c_str());
+  return true;
+}
+
 int main(int argc, char* argv[])
 {
   if (argc < 2)
@@ -79,6 +104,11 @@ int main(int argc, char* argv[])
     printf("[+] Generated the main.c file.\n");
   else
     printf("[!] Unable to write main.c, check the path you provided, if correct check if you have permission to create files in the target folder.\n");
+
+  if (genScripts(argv[1]))
+    printf("[+] Generated build and clean scripts.\n");
+  else 
+    printf("[!] Unable to generate scripts, check the provided paths.\n");
 
   return 0;
 }
