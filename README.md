@@ -1,6 +1,6 @@
 ## cmake generate
 ___
-This app solves the annoying process of having to write a CMakeLists.txt file every time you want to make a medium-ish sized app and can't use GCC to easily compile, you can either download the compiled binary from the releases or you can look at the build guide in the readme.
+This app solves the annoying process of having to write a CMakeLists.txt file every time you want to make a medium-ish sized app and can't use GCC to easily compile, you can either download the compiled binary from the releases or you can look at the build guide in the readme. ! WRITTEN FOR LINUX ONLY AS OF RIGHT NOW !
 ___
 ### dependencies
 -  CMake
