@@ -63,7 +63,7 @@ bool genScripts(std::string path)
   
   std::ofstream clean(sClean);
   clean << "#!/bin/bash\n";
-  clean << "rm build/\n";
+  clean << "rm build/ -rf\n";
 
 
   std::ofstream build(sBuild);
